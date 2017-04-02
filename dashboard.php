@@ -1,4 +1,27 @@
-<?php include 'header.php' ?>
+<?php
+//ini_set("log_errors", 1);
+//ini_set("display_errors", 1);
+ include 'header.php';
+require 'vendors/idiorm.php';
+
+ORM::configure(array(
+    'connection_string' => 'mysql:host=198.91.81.5;dbname=bitsple2_CRMsite',
+    'username' => 'bitsple2_admin',
+    'password' => '=SICK=from=team=',
+	'return_result_sets'=>true
+));
+
+$contacts = ORM::for_table('Contacts')->find_many();
+//var_dump($contacts);
+foreach($contacts as $contact){
+	var_dump($contact->ID);
+	var_dump($contact->FirstName);
+	var_dump($contact->LastName);
+	var_dump($contact->Address);
+	var_dump($contact->Phone);
+	var_dump($contact->Email);
+}
+?>
 
 	<div class="row">
 			<div class="col-xs-12">

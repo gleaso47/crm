@@ -1,3 +1,16 @@
+<?php
+//ini_set("log_errors", 1);
+//ini_set("display_errors", 1);
+require 'vendors/idiorm.php';
+
+ORM::configure(array(
+    'connection_string' => 'mysql:host=198.91.81.5;dbname=bitsple2_CRMsite',
+    'username' => 'bitsple2_admin',
+    'password' => '=SICK=from=team=',
+	'return_result_sets'=>true
+));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -72,7 +85,7 @@
 								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									User
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -132,33 +145,78 @@
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
 							<span class="menu-text"> Projects </span>
-
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
-
 						<b class="arrow"></b>
-
 						<ul class="submenu">
+							<li class="">
+								<a href="projects.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									View Project List
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="addProject.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Add New Project
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="editProject.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Update Project
+								</a>
+								<b class="arrow"></b>
+							</li>
 							<li class="">
 								<a href="tables.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Simple &amp; Dynamic
 								</a>
-
 								<b class="arrow"></b>
 							</li>
-
 							<li class="">
 								<a href="jqgrid.html">
 									<i class="menu-icon fa fa-caret-right"></i>
 									jqGrid plugin
 								</a>
-
 								<b class="arrow"></b>
 							</li>
 						</ul>
 					</li>
-
+          <li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> Customers </span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+								<a href="customers.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									View Customer List
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="addCustomer.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Add New Customer
+								</a>
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="editCustomer.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Update Customer
+								</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
 					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
@@ -342,13 +400,3 @@
 								</div><!-- /.pull-left -->
 							</div><!-- /.ace-settings-box -->
 						</div><!-- /.ace-settings-container -->
-
-						<div class="page-header">
-							<h1>
-								Dashboard
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									overview &amp; stats
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
